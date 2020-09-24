@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: azure-appconfig-kubernetes
+build:
+  local:
+    push: false
+  artifacts:
+  - image: azure-appconfig-kubernetes
+    jib:
+      type: maven
+      project: com.github.bilak:azure-appconfig-kubernetes
+deploy:
+  kubectl:
+    manifests: ["k8s/*.yaml"]

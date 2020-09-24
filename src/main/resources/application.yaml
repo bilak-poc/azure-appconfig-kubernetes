@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: azure-appconfig-kubernetes
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+        strategy: refresh
+        mode: polling
+        monitoring-secrets: true
+        monitoring-config-maps: true
+
+
+test:
+  name: original
+
+logging:
+  level:
+    com.github.bilak: DEBUG
+    org.springframework.cloud.kubernetes: DEBUG

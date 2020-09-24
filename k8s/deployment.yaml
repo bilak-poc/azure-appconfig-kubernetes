@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: azure-appconfig-kubernetes
+  name: azure-appconfig-kubernetes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-appconfig-kubernetes
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: azure-appconfig-kubernetes
+    spec:
+      containers:
+      - image: azure-appconfig-kubernetes
+        name: azure-appconfig-kubernetes
+        ports:
+          - containerPort: 8080
+        resources: {}
+status: {}
