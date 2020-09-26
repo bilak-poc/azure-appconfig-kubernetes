@@ -20,5 +20,5 @@ data:
         azure:
           appconfiguration:
             stores:
-              - connection-string:
+              - connection-string: Endpoint=https://replaceme.azconfig.io
 
