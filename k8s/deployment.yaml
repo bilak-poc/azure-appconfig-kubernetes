@@ -23,4 +23,7 @@ spec:
         ports:
           - containerPort: 8080
         resources: {}
+        envFrom:
+          - secretRef:
+              name: azure-appconfig-kubernetes
 status: {}

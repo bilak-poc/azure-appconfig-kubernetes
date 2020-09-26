@@ -4,5 +4,13 @@ metadata:
   name: azure-appconfig-kubernetes
 data:
   application-kubernetes.yaml: |-
+    azure:
+      storages:
+        sa202009:
+          name: ${SA202009_NAME}
+          key: ${SA202009_KEY}
+        sa202010:
+          name: ${sa202010_NAME}
+          key: ${SA202010_KEY}
     test:
       name: overridefromkubernetes

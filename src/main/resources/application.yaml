@@ -6,11 +6,15 @@ spring:
       reload:
         enabled: true
         strategy: refresh
-        mode: polling
+        mode: event
         monitoring-secrets: true
         monitoring-config-maps: true
 
-
+azure:
+  storages:
+    dummystorage:
+      name: dummystorage
+      key: dummystoragekey
 test:
   name: original
 
