@@ -14,3 +14,11 @@ data:
           key: ${SA202010_KEY}
     test:
       name: overridefromkubernetes
+  bootstrap-kubernetes.yaml: |-
+    spring:
+      cloud:
+        azure:
+          appconfiguration:
+            stores:
+              - connection-string:
+
