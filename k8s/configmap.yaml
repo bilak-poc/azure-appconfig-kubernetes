@@ -3,18 +3,20 @@ apiVersion: v1
 metadata:
   name: azure-appconfig-kubernetes
 data:
-  application-kubernetes.yaml: |-
+  bootstrap-kubernetes.yaml: |
     azure:
       storages:
+        sa202008:
+          name: 202008FromConfigMap
+          key: 202008FromConfigMap
         sa202009:
-          name: ${SA202009_NAME}
-          key: ${SA202009_KEY}
+          name: ${SA202009_NAME:notprovided}
+          key: ${SA202009_KEY:notprovided}
         sa202010:
-          name: ${sa202010_NAME}
-          key: ${SA202010_KEY}
+          name: ${sa202010_NAME:notprovided}
+          key: ${SA202010_KEY:notprovided}
     test:
       name: overridefromkubernetes
-  bootstrap-kubernetes.yaml: |-
     spring:
       cloud:
         azure:

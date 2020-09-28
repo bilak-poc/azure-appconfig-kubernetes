@@ -1,5 +1,0 @@
-spring:
-  cloud:
-    azure:
-      appconfiguration:
-        cache-expiration: PT10S

@@ -50,11 +50,11 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-kubernetes-all</artifactId>
     </dependency>
-    <dependency>
+    <!--<dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-cloud-azure-appconfiguration-config-web</artifactId>
       <version>${spring-cloud-azure-appconfiguration-config.version}</version>
-    </dependency>
+    </dependency>-->
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -90,6 +90,9 @@
         <artifactId>jib-maven-plugin</artifactId>
         <version>${jib-maven-plugin.version}</version>
         <configuration>
+          <from>
+            <image>gcr.io/distroless/java:11-debug</image>
+          </from>
           <container>
             <jvmFlags>
               <jvmFlag>-agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y</jvmFlag>

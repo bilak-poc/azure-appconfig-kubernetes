@@ -17,23 +17,23 @@ public class TestController {
   private final TestProperties testProperties;
   private final AzureProperties azureProperties;
 
-  @GetMapping
+  @GetMapping("/hello")
   String hello() {
     return "Hello " + testProperties.getName() + " " + LocalDateTime.now();
   }
 
-  @GetMapping("/{timeout}")
+  @GetMapping("/hello/{timeout}")
   String helloWithTimeout(@PathVariable Long timeout) throws InterruptedException {
     Thread.sleep(timeout * 1000);
     return "Timeout Hello " + testProperties.getName() + " " + LocalDateTime.now();
   }
 
-  @GetMapping("/storages")
+  @GetMapping
   ResponseEntity<Map<String, Storage>> getStorages() {
     return ResponseEntity.ok(azureProperties.getStorages());
   }
 
-  @GetMapping("/storages/{timeout}")
+  @GetMapping("/{timeout}")
   ResponseEntity<Map<String, Storage>> getStoragesWithTimeout(@PathVariable Long timeout) throws InterruptedException {
     Thread.sleep(timeout * 1000);
     return ResponseEntity.ok(azureProperties.getStorages());
